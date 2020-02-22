@@ -1,11 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.1;net461</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.1;net461;netcoreapp2.2</TargetFrameworks>
     <PackageId>NugetPackageTest_AdamBazley</PackageId>
     <Authors>Adam Bazley</Authors>
     <Description>Building and testing rest nuget packages</Description>
-    <Version>0.0.4</Version>
+    <Version>0.0.5</Version>
     <AssemblyVersion>0.0.3.0</AssemblyVersion>
   </PropertyGroup>
 

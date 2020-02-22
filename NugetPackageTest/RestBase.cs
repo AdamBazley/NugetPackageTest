@@ -49,8 +49,6 @@ namespace NugetPackageTest
         public string host => _commonConfig["host"];
         public string DB_Connection => _commonConfig["DB_Connection"];
 
-        public string branchAll => _commonConfig["branchAll"];
-
         public string authCookieName => _commonConfig["authCookieName"];
         public string authCookieValue => _commonConfig["authCookieValue"];
         public string sessionCookieName => _commonConfig["sessionCookieName"];
