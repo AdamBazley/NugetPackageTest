@@ -9,10 +9,10 @@ namespace NugetPackageTest
         public ApiScenarioContextKeys _apiScenarioContextKeys;
         protected ApiResources _apiResources;
 
-        public RestBase(ApiScenarioContextKeys apiScenarioContextKeys)
+        public RestBase(ApiScenarioContextKeys apiScenarioContextKeys, ApiResources apiResources)
         {
 
-            _apiResources = new ApiResources();
+            _apiResources = apiResources;
             _apiScenarioContextKeys = apiScenarioContextKeys;
         }
 
@@ -31,28 +31,27 @@ namespace NugetPackageTest
         public string host;
         public string DB_Connection;
 
-        private readonly ApiSettings _apiSettings = new ApiSettings();
+        private readonly ApiSettings _apiSettings;
 
-        public ApiResources()
+        public ApiResources(ApiSettings apiSettings)
         {
-
+            _apiSettings = apiSettings;
             host = _apiSettings.host;
             DB_Connection = _apiSettings.DB_Connection;
+            
         }
 
     }
 
     public class ApiSettings
     {
-        private readonly NameValueCollection _commonConfig = (NameValueCollection)ConfigurationManager.GetSection("appSettings");
+        public string host { get; set; }
+        public string DB_Connection { get; set; }
 
-        public string host => _commonConfig["host"];
-        public string DB_Connection => _commonConfig["DB_Connection"];
-
-        public string authCookieName => _commonConfig["authCookieName"];
-        public string authCookieValue => _commonConfig["authCookieValue"];
-        public string sessionCookieName => _commonConfig["sessionCookieName"];
-        public string sessionCookieValue => _commonConfig["sessionCookieValue"];
-        public string domain => _commonConfig["domain"];
+        public string authCookieName { get; set; }
+        public string authCookieValue { get; set; }
+        public string sessionCookieName { get; set; }
+        public string sessionCookieValue { get; set; }
+        public string domain { get; set; }
     }
 }
